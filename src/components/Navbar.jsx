@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 // Deploy trigger comment
+// Second trigger for Vercel
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiSun, FiMoon, FiCode } from 'react-icons/fi';
 import { useTheme } from '../context/ThemeContext';
