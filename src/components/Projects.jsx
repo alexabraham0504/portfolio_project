@@ -95,7 +95,8 @@ const Projects = () => {
                     {/* Filter Buttons */}
                     <motion.div
                         variants={itemVariants}
-                        className="flex justify-center gap-4 mb-16"
+                        className="flex justify-center gap-4"
+                        style={{ marginBottom: '6rem' }}
                     >
                         {filters.map((f) => (
                             <motion.button
@@ -236,7 +237,7 @@ const Projects = () => {
                                         </div>
 
                                         {/* Project Info */}
-                                        <div className="p-8 md:p-10 space-y-6 flex-1 flex flex-col">
+                                        <div className="space-y-8 flex-1 flex flex-col" style={{ padding: '3rem' }}>
                                             {/* Title */}
                                             <h3
                                                 className="text-xl md:text-2xl font-bold transition-colors duration-300 group-hover:text-transparent group-hover:bg-clip-text"

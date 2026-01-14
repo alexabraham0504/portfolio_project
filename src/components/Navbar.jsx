@@ -69,8 +69,8 @@ const Navbar = () => {
             <div className="container mx-auto px-4 md:px-6">
                 <motion.div
                     className={`flex items-center justify-between transition-all duration-500 ${scrolled
-                        ? 'bg-[var(--bg-primary)]/80 backdrop-blur-xl border border-[var(--primary-500)]/20 rounded-full px-6 py-2 shadow-lg shadow-[var(--primary-500)]/10'
-                        : 'bg-transparent px-2'
+                        ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border border-[var(--primary-500)]/30 rounded-full px-6 py-3 shadow-xl'
+                        : 'bg-transparent backdrop-blur-sm px-6 py-3'
                         }`}
                     layout
                 >
@@ -81,22 +81,6 @@ const Navbar = () => {
                         whileHover={{ scale: 1.02 }}
                         onClick={(e) => handleLinkClick(e, '#home')}
                     >
-                        {/* Logo Icon */}
-                        <motion.div
-                            className="w-10 h-10 rounded-xl flex items-center justify-center relative overflow-hidden"
-                            style={{
-                                background: 'linear-gradient(135deg, var(--primary-500), var(--accent-500))',
-                            }}
-                            whileHover={{ rotate: 5 }}
-                        >
-                            <FiCode size={20} className="text-white relative z-10" />
-                            <motion.div
-                                className="absolute inset-0 bg-white/20"
-                                initial={{ x: '-100%' }}
-                                whileHover={{ x: '100%' }}
-                                transition={{ duration: 0.5 }}
-                            />
-                        </motion.div>
                         {/* Logo Text */}
                         <div className="hidden sm:block">
                             <span className="text-xl font-bold bg-gradient-to-r from-[var(--primary-400)] via-[var(--accent-400)] to-[var(--primary-400)] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
@@ -106,78 +90,75 @@ const Navbar = () => {
                     </motion.a>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center">
-                        {/* Nav Links Container */}
-                        <div className="flex items-center gap-4 bg-[var(--bg-tertiary)]/50 backdrop-blur-sm rounded-full p-4 border border-[var(--primary-500)]/20 shadow-lg">
-                            {navLinks.map((link) => {
-                                const isActive = activeSection === link.href.replace('#', '');
-                                return (
-                                    <motion.a
-                                        key={link.name}
-                                        href={link.href}
-                                        onClick={(e) => handleLinkClick(e, link.href)}
-                                        className={`relative px-12 py-6 rounded-full font-bold text-base transition-all duration-300 ${isActive
-                                            ? 'text-white'
-                                            : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-                                            }`}
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        {/* Active Background */}
-                                        {isActive && (
-                                            <motion.div
-                                                layoutId="activeNav"
-                                                className="absolute inset-0 rounded-full"
-                                                style={{
-                                                    background: 'linear-gradient(135deg, var(--primary-500), var(--accent-500))',
-                                                }}
-                                                transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                                            />
-                                        )}
-                                        <span className="relative z-10">{link.name}</span>
-                                    </motion.a>
-                                );
-                            })}
-                        </div>
-
-                        {/* Theme Toggle */}
-                        <motion.button
-                            onClick={toggleTheme}
-                            className="ml-4 relative w-12 h-12 rounded-full overflow-hidden group"
-                            style={{
-                                background: 'linear-gradient(135deg, var(--primary-500)/20, var(--accent-500)/20)',
-                                border: '1px solid var(--primary-500)/30',
-                            }}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            aria-label="Toggle theme"
-                        >
-                            <motion.div
-                                className="absolute inset-0 flex items-center justify-center"
-                                initial={false}
-                                animate={{
-                                    rotate: theme === 'dark' ? 0 : 180,
-                                    scale: 1
-                                }}
-                                transition={{ duration: 0.5, type: 'spring' }}
-                            >
-                                {theme === 'dark' ? (
-                                    <FiSun size={20} className="text-yellow-400" />
-                                ) : (
-                                    <FiMoon size={20} className="text-[var(--primary-400)]" />
-                                )}
-                            </motion.div>
-                            {/* Glow Effect */}
-                            <motion.div
-                                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
-                                style={{
-                                    background: theme === 'dark'
-                                        ? 'radial-gradient(circle, rgba(250, 204, 21, 0.3) 0%, transparent 70%)'
-                                        : 'radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%)',
-                                }}
-                            />
-                        </motion.button>
+                    <div className="hidden md:flex items-center gap-10">
+                        {navLinks.map((link) => {
+                            const isActive = activeSection === link.href.replace('#', '');
+                            return (
+                                <motion.a
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={(e) => handleLinkClick(e, link.href)}
+                                    className={`relative px-12 py-6 rounded-full font-bold text-base transition-all duration-300 ${isActive
+                                        ? 'text-white'
+                                        : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                                        }`}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    {/* Active Background */}
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="activeNav"
+                                            className="absolute inset-0 rounded-full"
+                                            style={{
+                                                background: 'linear-gradient(135deg, var(--primary-500), var(--accent-500))',
+                                            }}
+                                            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{link.name}</span>
+                                </motion.a>
+                            );
+                        })}
                     </div>
+
+                    {/* Theme Toggle */}
+                    <motion.button
+                        onClick={toggleTheme}
+                        className="ml-4 relative w-12 h-12 rounded-full overflow-hidden group"
+                        style={{
+                            background: 'linear-gradient(135deg, var(--primary-500)/20, var(--accent-500)/20)',
+                            border: '1px solid var(--primary-500)/30',
+                        }}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        aria-label="Toggle theme"
+                    >
+                        <motion.div
+                            className="absolute inset-0 flex items-center justify-center"
+                            initial={false}
+                            animate={{
+                                rotate: theme === 'dark' ? 0 : 180,
+                                scale: 1
+                            }}
+                            transition={{ duration: 0.5, type: 'spring' }}
+                        >
+                            {theme === 'dark' ? (
+                                <FiSun size={20} className="text-yellow-400" />
+                            ) : (
+                                <FiMoon size={20} className="text-[var(--primary-400)]" />
+                            )}
+                        </motion.div>
+                        {/* Glow Effect */}
+                        <motion.div
+                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                            style={{
+                                background: theme === 'dark'
+                                    ? 'radial-gradient(circle, rgba(250, 204, 21, 0.3) 0%, transparent 70%)'
+                                    : 'radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%)',
+                            }}
+                        />
+                    </motion.button>
 
                     {/* Mobile Menu Button */}
                     <div className="flex items-center gap-3 md:hidden">
@@ -274,8 +255,8 @@ const Navbar = () => {
                         </div>
                     </motion.div>
                 )}
-            </AnimatePresence>
-        </motion.nav>
+            </AnimatePresence >
+        </motion.nav >
     );
 };
 

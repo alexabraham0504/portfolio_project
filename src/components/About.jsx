@@ -119,13 +119,13 @@ const About = () => {
 
                                 {/* Experience Badge */}
                                 <motion.div
-                                    className="absolute -bottom-6 -right-6 px-6 py-4 glass rounded-2xl"
+                                    className="absolute -bottom-8 -right-8 px-10 py-6 glass rounded-3xl shadow-2xl"
                                     whileHover={{ scale: 1.05 }}
                                     animate={{ y: [0, -5, 0] }}
                                     transition={{ duration: 2, repeat: Infinity }}
                                 >
-                                    <p className="text-3xl font-bold gradient-text">2+</p>
-                                    <p className="text-sm text-[var(--text-secondary)]">Years of Experience</p>
+                                    <p className="text-5xl font-bold gradient-text mb-2">2+</p>
+                                    <p className="text-base text-[var(--text-secondary)]">Years of Experience</p>
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -157,7 +157,7 @@ const About = () => {
 
                             <motion.a
                                 href="#contact"
-                                className="btn-primary inline-flex mt-32"
+                                className="btn-primary inline-flex mt-96"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={(e) => {
@@ -173,12 +173,13 @@ const About = () => {
                     {/* Stats */}
                     <motion.div
                         variants={itemVariants}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-64"
+                        className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-96"
+                        style={{ marginTop: '6rem' }}
                     >
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={stat.label}
-                                className="glass rounded-2xl p-6 text-center card-hover"
+                                className="glass rounded-3xl p-6 text-center card-hover"
                                 whileHover={{ y: -5 }}
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -187,7 +188,7 @@ const About = () => {
                                 <h4 className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                                     {stat.value}
                                 </h4>
-                                <p className="text-[var(--text-secondary)] text-sm md:text-base">
+                                <p className="text-[var(--text-secondary)] text-xs md:text-sm">
                                     {stat.label}
                                 </p>
                             </motion.div>
@@ -195,29 +196,30 @@ const About = () => {
                     </motion.div>
 
                     {/* Services */}
-                    <motion.div variants={itemVariants}>
-                        <h3 className="text-2xl md:text-3xl font-bold text-center mb-20">
+                    <motion.div variants={itemVariants} style={{ marginTop: '8rem' }}>
+                        <h3 className="text-3xl md:text-4xl font-bold text-center mb-12">
                             What I <span className="gradient-text">Do</span>
                         </h3>
 
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                             {services.map((service, index) => (
                                 <motion.div
                                     key={service.title}
-                                    className="glass rounded-2xl p-8 card-hover"
+                                    className="glass rounded-3xl card-hover"
+                                    style={{ padding: '2rem' }}
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ delay: 0.5 + index * 0.1 }}
                                     whileHover={{ y: -8 }}
                                 >
                                     <div
-                                        className="w-14 h-14 rounded-xl flex items-center justify-center mb-4"
+                                        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8"
                                         style={{ background: 'var(--gradient-accent)' }}
                                     >
-                                        <service.icon size={28} className="text-white" />
+                                        <service.icon size={32} className="text-white" />
                                     </div>
-                                    <h4 className="text-lg font-bold mb-2">{service.title}</h4>
-                                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
+                                    <h4 className="text-lg md:text-xl font-bold mb-6">{service.title}</h4>
+                                    <p className="text-[var(--text-secondary)] text-sm md:text-base leading-loose">
                                         {service.description}
                                     </p>
                                 </motion.div>

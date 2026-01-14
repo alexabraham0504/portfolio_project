@@ -133,7 +133,7 @@ const Contact = () => {
                         {/* Contact Info */}
                         <motion.div variants={itemVariants} className="lg:col-span-2 space-y-8">
                             <div>
-                                <h3 className="text-2xl font-bold mb-4">Let's talk about your project</h3>
+                                <h3 className="text-3xl md:text-4xl font-bold mb-6">Let's talk about your project</h3>
                                 <p className="text-[var(--text-secondary)] leading-relaxed">
                                     I'm always open to discussing new projects, creative ideas, or opportunities
                                     to be part of your visions. Feel free to reach out through any of the channels below.
@@ -145,7 +145,7 @@ const Contact = () => {
                                 {contactInfo.map((info, index) => (
                                     <motion.div
                                         key={info.label}
-                                        className="flex items-center gap-4 p-4 glass rounded-xl card-hover"
+                                        className="flex items-center gap-4 p-6 glass rounded-xl card-hover"
                                         initial={{ opacity: 0, x: -20 }}
                                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                                         transition={{ delay: 0.3 + index * 0.1 }}
@@ -213,8 +213,8 @@ const Contact = () => {
                                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                                         transition={{ delay: 0.4 }}
                                     >
-                                        <label htmlFor="name" className="block text-sm font-medium mb-2">
-                                            Your Name
+                                        <label htmlFor="name" className="block text-base md:text-lg font-bold mb-4">
+                                            <span className="gradient-text">Your Name</span>
                                         </label>
                                         <input
                                             type="text"
@@ -234,8 +234,8 @@ const Contact = () => {
                                         animate={isInView ? { opacity: 1, y: 0 } : {}}
                                         transition={{ delay: 0.5 }}
                                     >
-                                        <label htmlFor="email" className="block text-sm font-medium mb-2">
-                                            Your Email
+                                        <label htmlFor="email" className="block text-base md:text-lg font-bold mb-4">
+                                            <span className="gradient-text">Your Email</span>
                                         </label>
                                         <input
                                             type="email"
@@ -256,8 +256,8 @@ const Contact = () => {
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ delay: 0.6 }}
                                 >
-                                    <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                                        Subject
+                                    <label htmlFor="subject" className="block text-base md:text-lg font-bold mb-4">
+                                        <span className="gradient-text">Subject</span>
                                     </label>
                                     <input
                                         type="text"
@@ -277,8 +277,8 @@ const Contact = () => {
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ delay: 0.7 }}
                                 >
-                                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                                        Message
+                                    <label htmlFor="message" className="block text-base md:text-lg font-bold mb-4">
+                                        <span className="gradient-text">Message</span>
                                     </label>
                                     <textarea
                                         id="message"
@@ -404,8 +404,8 @@ const Contact = () => {
                         </motion.div>
                     </div>
                 </motion.div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 };
 

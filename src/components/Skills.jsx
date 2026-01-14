@@ -19,7 +19,7 @@ import {
     SiMongodb,
     SiPostgresql,
     SiPython,
-    SiRedux,
+    SiFirebase,
 } from 'react-icons/si';
 
 const skillCategories = [
@@ -33,7 +33,6 @@ const skillCategories = [
             { name: 'HTML5', icon: FaHtml5, color: '#E34F26', level: 98 },
             { name: 'CSS3', icon: FaCss3Alt, color: '#1572B6', level: 95 },
             { name: 'Tailwind', icon: SiTailwindcss, color: '#06B6D4', level: 92 },
-            { name: 'Redux', icon: SiRedux, color: '#764ABC', level: 85 },
         ],
     },
     {
@@ -41,6 +40,7 @@ const skillCategories = [
         skills: [
             { name: 'Node.js', icon: FaNodeJs, color: '#339933', level: 90 },
             { name: 'Python', icon: SiPython, color: '#3776AB', level: 85 },
+            { name: 'Firebase', icon: SiFirebase, color: '#FFCA28', level: 87 },
             { name: 'MongoDB', icon: SiMongodb, color: '#47A248', level: 88 },
             { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1', level: 82 },
         ],
