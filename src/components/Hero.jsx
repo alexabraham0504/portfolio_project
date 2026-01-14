@@ -101,7 +101,7 @@ const Hero = () => {
                         </motion.h1>
 
                         <motion.p
-                            className="text-[var(--text-secondary)] text-lg md:text-xl max-w-xl mb-8 leading-relaxed"
+                            className="text-[var(--text-secondary)] text-lg md:text-xl max-w-xl mb-12 leading-relaxed"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
@@ -112,7 +112,7 @@ const Hero = () => {
 
                         {/* CTA Buttons */}
                         <motion.div
-                            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+                            className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-12"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}

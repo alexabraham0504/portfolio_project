@@ -108,7 +108,7 @@ const Navbar = () => {
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center">
                         {/* Nav Links Container */}
-                        <div className="flex items-center gap-2 bg-[var(--bg-tertiary)]/50 backdrop-blur-sm rounded-full p-1.5 border border-[var(--primary-500)]/10">
+                        <div className="flex items-center gap-4 bg-[var(--bg-tertiary)]/50 backdrop-blur-sm rounded-full p-4 border border-[var(--primary-500)]/20 shadow-lg">
                             {navLinks.map((link) => {
                                 const isActive = activeSection === link.href.replace('#', '');
                                 return (
@@ -116,7 +116,7 @@ const Navbar = () => {
                                         key={link.name}
                                         href={link.href}
                                         onClick={(e) => handleLinkClick(e, link.href)}
-                                        className={`relative px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${isActive
+                                        className={`relative px-12 py-6 rounded-full font-bold text-base transition-all duration-300 ${isActive
                                             ? 'text-white'
                                             : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                                             }`}

@@ -84,7 +84,7 @@ const About = () => {
                     </motion.div>
 
                     {/* Main Content */}
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-64">
                         {/* Image/Visual Side */}
                         <motion.div
                             variants={itemVariants}
@@ -157,7 +157,7 @@ const About = () => {
 
                             <motion.a
                                 href="#contact"
-                                className="btn-primary inline-flex mt-4"
+                                className="btn-primary inline-flex mt-32"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={(e) => {
@@ -173,7 +173,7 @@ const About = () => {
                     {/* Stats */}
                     <motion.div
                         variants={itemVariants}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+                        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-64"
                     >
                         {stats.map((stat, index) => (
                             <motion.div
@@ -196,7 +196,7 @@ const About = () => {
 
                     {/* Services */}
                     <motion.div variants={itemVariants}>
-                        <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">
+                        <h3 className="text-2xl md:text-3xl font-bold text-center mb-20">
                             What I <span className="gradient-text">Do</span>
                         </h3>
 
@@ -204,7 +204,7 @@ const About = () => {
                             {services.map((service, index) => (
                                 <motion.div
                                     key={service.title}
-                                    className="glass rounded-2xl p-6 card-hover"
+                                    className="glass rounded-2xl p-8 card-hover"
                                     initial={{ opacity: 0, y: 30 }}
                                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                                     transition={{ delay: 0.5 + index * 0.1 }}
