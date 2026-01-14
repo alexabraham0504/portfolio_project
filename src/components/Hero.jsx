@@ -206,7 +206,7 @@ const Hero = () => {
 
                             {/* Avatar Container */}
                             <div
-                                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 group cursor-pointer spin-slow"
+                                className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 group cursor-pointer"
                             >
                                 {/* Gradient Border */}
                                 <div

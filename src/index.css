@@ -337,12 +337,3 @@ textarea::placeholder {
     transform: rotate(360deg);
   }
 }
-
-/* Spin Slow Utility with Pause on Hover */
-.spin-slow {
-  animation: spin 12s linear infinite;
-}
-
-.spin-slow:hover {
-  animation-play-state: paused;
-}
