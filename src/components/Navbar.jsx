@@ -70,7 +70,7 @@ const Navbar = () => {
             {/* Navbar Container with Centered Pill Design */}
             <div className="w-full px-4 md:px-8">
                 <motion.div
-                    className={`flex items-center justify-center transition-all duration-500 ${scrolled
+                    className={`relative flex items-center justify-center transition-all duration-500 ${scrolled
                         ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border-b border-[var(--primary-500)]/30 px-8 md:px-12 py-3 shadow-xl'
                         : 'bg-transparent backdrop-blur-sm px-6 md:px-10 py-3'
                         }`}
@@ -166,7 +166,7 @@ const Navbar = () => {
                     </motion.button>
 
                     {/* Mobile Menu Button */}
-                    <div className="absolute right-2 flex items-center gap-2 md:hidden">
+                    <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2 md:hidden">
                         <motion.button
                             onClick={toggleTheme}
                             className="p-2.5 rounded-full"
