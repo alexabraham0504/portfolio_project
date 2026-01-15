@@ -70,64 +70,67 @@ const Navbar = () => {
             {/* Navbar Container with Centered Pill Design */}
             <div className="w-full px-4 md:px-8">
                 <motion.div
-                    className={`flex items-center justify-between transition-all duration-500 ${scrolled
+                    className={`flex items-center justify-center transition-all duration-500 ${scrolled
                         ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border-b border-[var(--primary-500)]/30 px-8 md:px-12 py-3 shadow-xl'
                         : 'bg-transparent backdrop-blur-sm px-6 md:px-10 py-3'
                         }`}
                     layout
                 >
-                    {/* Logo - positioned closer to center */}
-                    <motion.a
-                        href="#home"
-                        className="flex items-center gap-2 cursor-pointer group ml-auto mr-1 md:mr-2"
-                        whileHover={{ scale: 1.05 }}
-                        onClick={(e) => handleLinkClick(e, '#home')}
-                    >
-                        {/* Logo Text */}
-                        <div className="hidden sm:block">
-                            <span className="text-xl md:text-2xl font-extrabold italic bg-gradient-to-r from-[var(--primary-400)] via-[var(--accent-400)] to-[var(--primary-400)] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient" style={{ fontFamily: "'Playfair Display', 'Cinzel', 'Georgia', serif", letterSpacing: '0.02em', textShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}>
-                                Alex Abraham
-                            </span>
-                        </div>
-                    </motion.a>
+                    {/* Center Group: Logo + Navigation */}
+                    <div className="flex items-center gap-8 md:gap-16">
+                        {/* Logo */}
+                        <motion.a
+                            href="#home"
+                            className="flex items-center gap-2 cursor-pointer group"
+                            whileHover={{ scale: 1.05 }}
+                            onClick={(e) => handleLinkClick(e, '#home')}
+                        >
+                            {/* Logo Text */}
+                            <div className="hidden sm:block">
+                                <span className="text-xl md:text-2xl font-extrabold italic bg-gradient-to-r from-[var(--primary-400)] via-[var(--accent-400)] to-[var(--primary-400)] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient" style={{ fontFamily: "'Playfair Display', 'Cinzel', 'Georgia', serif", letterSpacing: '0.02em', textShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}>
+                                    Alex Abraham
+                                </span>
+                            </div>
+                        </motion.a>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center gap-10">
-                        {navLinks.map((link) => {
-                            const isActive = activeSection === link.href.replace('#', '');
-                            return (
-                                <motion.a
-                                    key={link.name}
-                                    href={link.href}
-                                    onClick={(e) => handleLinkClick(e, link.href)}
-                                    className={`relative px-12 py-6 rounded-full font-bold text-base transition-all duration-300 ${isActive
-                                        ? 'text-white'
-                                        : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-                                        }`}
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    {/* Active Background */}
-                                    {isActive && (
-                                        <motion.div
-                                            layoutId="activeNav"
-                                            className="absolute inset-0 rounded-full"
-                                            style={{
-                                                background: 'linear-gradient(135deg, var(--primary-500), var(--accent-500))',
-                                            }}
-                                            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                                        />
-                                    )}
-                                    <span className="relative z-10">{link.name}</span>
-                                </motion.a>
-                            );
-                        })}
+                        {/* Desktop Navigation */}
+                        <div className="hidden md:flex items-center gap-10">
+                            {navLinks.map((link) => {
+                                const isActive = activeSection === link.href.replace('#', '');
+                                return (
+                                    <motion.a
+                                        key={link.name}
+                                        href={link.href}
+                                        onClick={(e) => handleLinkClick(e, link.href)}
+                                        className={`relative px-12 py-6 rounded-full font-bold text-base transition-all duration-300 ${isActive
+                                            ? 'text-white'
+                                            : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                                            }`}
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        {/* Active Background */}
+                                        {isActive && (
+                                            <motion.div
+                                                layoutId="activeNav"
+                                                className="absolute inset-0 rounded-full"
+                                                style={{
+                                                    background: 'linear-gradient(135deg, var(--primary-500), var(--accent-500))',
+                                                }}
+                                                transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                                            />
+                                        )}
+                                        <span className="relative z-10">{link.name}</span>
+                                    </motion.a>
+                                );
+                            })}
+                        </div>
                     </div>
 
                     {/* Theme Toggle */}
                     <motion.button
                         onClick={toggleTheme}
-                        className="ml-4 relative w-12 h-12 rounded-full overflow-hidden group"
+                        className="absolute right-8 md:right-12 w-12 h-12 rounded-full overflow-hidden group"
                         style={{
                             background: 'linear-gradient(135deg, var(--primary-500)/20, var(--accent-500)/20)',
                             border: '1px solid var(--primary-500)/30',
