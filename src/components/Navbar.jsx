@@ -79,7 +79,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <motion.a
                         href="#home"
-                        className="flex items-center gap-2 cursor-pointer group"
+                        className="flex items-center gap-2 cursor-pointer group ml-8 md:ml-32"
                         whileHover={{ scale: 1.02 }}
                         onClick={(e) => handleLinkClick(e, '#home')}
                     >
@@ -127,7 +127,7 @@ const Navbar = () => {
                     {/* Theme Toggle */}
                     <motion.button
                         onClick={toggleTheme}
-                        className="ml-4 relative w-12 h-12 rounded-full overflow-hidden group"
+                        className="ml-4 mr-8 md:mr-32 relative w-12 h-12 rounded-full overflow-hidden group"
                         style={{
                             background: 'linear-gradient(135deg, var(--primary-500)/20, var(--accent-500)/20)',
                             border: '1px solid var(--primary-500)/30',
