@@ -127,10 +127,10 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Theme Toggle */}
+                    {/* Theme Toggle - Desktop Only */}
                     <motion.button
                         onClick={toggleTheme}
-                        className="absolute right-8 md:right-12 w-12 h-12 rounded-full overflow-hidden group"
+                        className="hidden md:block absolute right-8 md:right-12 w-12 h-12 rounded-full overflow-hidden group"
                         style={{
                             background: 'linear-gradient(135deg, var(--primary-500)/20, var(--accent-500)/20)',
                             border: '1px solid var(--primary-500)/30',
