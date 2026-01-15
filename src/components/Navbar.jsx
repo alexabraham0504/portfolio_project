@@ -68,23 +68,23 @@ const Navbar = () => {
                 }`}
         >
             {/* Navbar Container with Centered Pill Design */}
-            <div className="container mx-auto px-16 md:px-24">
+            <div className="w-full px-4 md:px-8">
                 <motion.div
                     className={`flex items-center justify-between transition-all duration-500 ${scrolled
-                        ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border border-[var(--primary-500)]/30 rounded-full px-20 py-3 shadow-xl'
-                        : 'bg-transparent backdrop-blur-sm px-16 py-3'
+                        ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border border-[var(--primary-500)]/30 rounded-full px-8 md:px-12 py-3 shadow-xl'
+                        : 'bg-transparent backdrop-blur-sm px-6 md:px-10 py-3'
                         }`}
                     layout
                 >
                     {/* Logo */}
                     <motion.a
                         href="#home"
-                        className="flex items-center gap-2 cursor-pointer group ml-12 md:ml-48"
+                        className="flex items-center gap-2 cursor-pointer group"
                         whileHover={{ scale: 1.02 }}
                         onClick={(e) => handleLinkClick(e, '#home')}
                     >
                         {/* Logo Text */}
-                        <div className="hidden sm:block pl-8 md:pl-24">
+                        <div className="hidden sm:block">
                             <span className="text-xl font-bold bg-gradient-to-r from-[var(--primary-400)] via-[var(--accent-400)] to-[var(--primary-400)] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
                                 Alex Abraham
                             </span>
@@ -127,7 +127,7 @@ const Navbar = () => {
                     {/* Theme Toggle */}
                     <motion.button
                         onClick={toggleTheme}
-                        className="ml-4 mr-12 md:mr-48 relative w-12 h-12 rounded-full overflow-hidden group"
+                        className="ml-4 relative w-12 h-12 rounded-full overflow-hidden group"
                         style={{
                             background: 'linear-gradient(135deg, var(--primary-500)/20, var(--accent-500)/20)',
                             border: '1px solid var(--primary-500)/30',
