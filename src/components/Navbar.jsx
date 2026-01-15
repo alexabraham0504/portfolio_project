@@ -76,55 +76,52 @@ const Navbar = () => {
                         }`}
                     layout
                 >
-                    {/* Left Group: Logo + Navigation */}
-                    <div className="flex items-center gap-8 md:gap-16">
-                        {/* Logo */}
-                        <motion.a
-                            href="#home"
-                            className="flex items-center gap-2 cursor-pointer group"
-                            whileHover={{ scale: 1.02 }}
-                            onClick={(e) => handleLinkClick(e, '#home')}
-                        >
-                            {/* Logo Text */}
-                            <div className="hidden sm:block">
-                                <span className="text-2xl md:text-3xl font-black tracking-wider bg-gradient-to-r from-[var(--primary-400)] via-[var(--accent-400)] to-[var(--primary-400)] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient uppercase" style={{ fontFamily: "'Poppins', 'Inter', sans-serif", letterSpacing: '0.05em' }}>
-                                    Alex Abraham
-                                </span>
-                            </div>
-                        </motion.a>
-
-                        {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center gap-10">
-                            {navLinks.map((link) => {
-                                const isActive = activeSection === link.href.replace('#', '');
-                                return (
-                                    <motion.a
-                                        key={link.name}
-                                        href={link.href}
-                                        onClick={(e) => handleLinkClick(e, link.href)}
-                                        className={`relative px-12 py-6 rounded-full font-bold text-base transition-all duration-300 ${isActive
-                                            ? 'text-white'
-                                            : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-                                            }`}
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                    >
-                                        {/* Active Background */}
-                                        {isActive && (
-                                            <motion.div
-                                                layoutId="activeNav"
-                                                className="absolute inset-0 rounded-full"
-                                                style={{
-                                                    background: 'linear-gradient(135deg, var(--primary-500), var(--accent-500))',
-                                                }}
-                                                transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                                            />
-                                        )}
-                                        <span className="relative z-10">{link.name}</span>
-                                    </motion.a>
-                                );
-                            })}
+                    {/* Logo - positioned closer to center */}
+                    <motion.a
+                        href="#home"
+                        className="flex items-center gap-2 cursor-pointer group ml-auto mr-8 md:mr-16"
+                        whileHover={{ scale: 1.02 }}
+                        onClick={(e) => handleLinkClick(e, '#home')}
+                    >
+                        {/* Logo Text */}
+                        <div className="hidden sm:block">
+                            <span className="text-2xl md:text-3xl font-black tracking-wider bg-gradient-to-r from-[var(--primary-400)] via-[var(--accent-400)] to-[var(--primary-400)] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient uppercase" style={{ fontFamily: "'Poppins', 'Inter', sans-serif", letterSpacing: '0.05em' }}>
+                                Alex Abraham
+                            </span>
                         </div>
+                    </motion.a>
+
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex items-center gap-10">
+                        {navLinks.map((link) => {
+                            const isActive = activeSection === link.href.replace('#', '');
+                            return (
+                                <motion.a
+                                    key={link.name}
+                                    href={link.href}
+                                    onClick={(e) => handleLinkClick(e, link.href)}
+                                    className={`relative px-12 py-6 rounded-full font-bold text-base transition-all duration-300 ${isActive
+                                        ? 'text-white'
+                                        : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                                        }`}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    {/* Active Background */}
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="activeNav"
+                                            className="absolute inset-0 rounded-full"
+                                            style={{
+                                                background: 'linear-gradient(135deg, var(--primary-500), var(--accent-500))',
+                                            }}
+                                            transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
+                                    <span className="relative z-10">{link.name}</span>
+                                </motion.a>
+                            );
+                        })}
                     </div>
 
                     {/* Theme Toggle */}
