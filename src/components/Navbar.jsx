@@ -79,7 +79,7 @@ const Navbar = () => {
                     {/* Logo - positioned closer to center */}
                     <motion.a
                         href="#home"
-                        className="flex items-center gap-2 cursor-pointer group ml-auto mr-2 md:mr-4"
+                        className="flex items-center gap-2 cursor-pointer group ml-auto mr-1 md:mr-2"
                         whileHover={{ scale: 1.05 }}
                         onClick={(e) => handleLinkClick(e, '#home')}
                     >
