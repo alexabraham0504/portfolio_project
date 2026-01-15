@@ -68,18 +68,18 @@ const Navbar = () => {
                 }`}
         >
             {/* Navbar Container with Centered Pill Design */}
-            <div className="container mx-auto px-8 md:px-12">
+            <div className="container mx-auto px-16 md:px-24">
                 <motion.div
                     className={`flex items-center justify-between transition-all duration-500 ${scrolled
-                        ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border border-[var(--primary-500)]/30 rounded-full px-12 py-3 shadow-xl'
-                        : 'bg-transparent backdrop-blur-sm px-10 py-3'
+                        ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border border-[var(--primary-500)]/30 rounded-full px-20 py-3 shadow-xl'
+                        : 'bg-transparent backdrop-blur-sm px-16 py-3'
                         }`}
                     layout
                 >
                     {/* Logo */}
                     <motion.a
                         href="#home"
-                        className="flex items-center gap-2 cursor-pointer group ml-8 md:ml-32"
+                        className="flex items-center gap-2 cursor-pointer group ml-12 md:ml-48"
                         whileHover={{ scale: 1.02 }}
                         onClick={(e) => handleLinkClick(e, '#home')}
                     >
@@ -127,7 +127,7 @@ const Navbar = () => {
                     {/* Theme Toggle */}
                     <motion.button
                         onClick={toggleTheme}
-                        className="ml-4 mr-8 md:mr-32 relative w-12 h-12 rounded-full overflow-hidden group"
+                        className="ml-4 mr-12 md:mr-48 relative w-12 h-12 rounded-full overflow-hidden group"
                         style={{
                             background: 'linear-gradient(135deg, var(--primary-500)/20, var(--accent-500)/20)',
                             border: '1px solid var(--primary-500)/30',
