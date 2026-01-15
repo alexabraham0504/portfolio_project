@@ -79,13 +79,13 @@ const Navbar = () => {
                     {/* Logo - positioned closer to center */}
                     <motion.a
                         href="#home"
-                        className="flex items-center gap-2 cursor-pointer group ml-auto mr-8 md:mr-16"
-                        whileHover={{ scale: 1.02 }}
+                        className="flex items-center gap-2 cursor-pointer group ml-auto mr-2 md:mr-4"
+                        whileHover={{ scale: 1.05 }}
                         onClick={(e) => handleLinkClick(e, '#home')}
                     >
                         {/* Logo Text */}
                         <div className="hidden sm:block">
-                            <span className="text-2xl md:text-3xl font-black tracking-wider bg-gradient-to-r from-[var(--primary-400)] via-[var(--accent-400)] to-[var(--primary-400)] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient uppercase" style={{ fontFamily: "'Poppins', 'Inter', sans-serif", letterSpacing: '0.05em' }}>
+                            <span className="text-xl md:text-2xl font-extrabold italic bg-gradient-to-r from-[var(--primary-400)] via-[var(--accent-400)] to-[var(--primary-400)] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient" style={{ fontFamily: "'Playfair Display', 'Cinzel', 'Georgia', serif", letterSpacing: '0.02em', textShadow: '0 0 30px rgba(139, 92, 246, 0.3)' }}>
                                 Alex Abraham
                             </span>
                         </div>
