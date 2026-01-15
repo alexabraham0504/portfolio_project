@@ -84,7 +84,7 @@ const Navbar = () => {
                         onClick={(e) => handleLinkClick(e, '#home')}
                     >
                         {/* Logo Text */}
-                        <div className="hidden sm:block">
+                        <div className="hidden sm:block pl-8 md:pl-24">
                             <span className="text-xl font-bold bg-gradient-to-r from-[var(--primary-400)] via-[var(--accent-400)] to-[var(--primary-400)] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
                                 Alex Abraham
                             </span>
