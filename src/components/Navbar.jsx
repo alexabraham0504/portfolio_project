@@ -166,7 +166,7 @@ const Navbar = () => {
                     </motion.button>
 
                     {/* Mobile Menu Button */}
-                    <div className="absolute right-4 flex items-center gap-3 md:hidden">
+                    <div className="absolute right-2 flex items-center gap-2 md:hidden">
                         <motion.button
                             onClick={toggleTheme}
                             className="p-2.5 rounded-full"
