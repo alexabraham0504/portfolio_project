@@ -68,11 +68,11 @@ const Navbar = () => {
                 }`}
         >
             {/* Navbar Container with Centered Pill Design */}
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="container mx-auto px-8 md:px-12">
                 <motion.div
                     className={`flex items-center justify-between transition-all duration-500 ${scrolled
-                        ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border border-[var(--primary-500)]/30 rounded-full px-6 py-3 shadow-xl'
-                        : 'bg-transparent backdrop-blur-sm px-6 py-3'
+                        ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border border-[var(--primary-500)]/30 rounded-full px-12 py-3 shadow-xl'
+                        : 'bg-transparent backdrop-blur-sm px-10 py-3'
                         }`}
                     layout
                 >
