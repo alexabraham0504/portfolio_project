@@ -79,7 +79,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <motion.a
                         href="#home"
-                        className="flex items-center gap-2 cursor-pointer group"
+                        className="flex items-center gap-2 cursor-pointer group mr-16 md:mr-24"
                         whileHover={{ scale: 1.02 }}
                         onClick={(e) => handleLinkClick(e, '#home')}
                     >
