@@ -71,7 +71,7 @@ const Navbar = () => {
             <div className="w-full px-4 md:px-8">
                 <motion.div
                     className={`flex items-center justify-between transition-all duration-500 ${scrolled
-                        ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border border-[var(--primary-500)]/30 rounded-full px-8 md:px-12 py-3 shadow-xl'
+                        ? 'bg-[var(--bg-primary)]/70 backdrop-blur-xl border-b border-[var(--primary-500)]/30 px-8 md:px-12 py-3 shadow-xl'
                         : 'bg-transparent backdrop-blur-sm px-6 md:px-10 py-3'
                         }`}
                     layout
