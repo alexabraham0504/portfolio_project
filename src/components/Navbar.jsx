@@ -166,10 +166,10 @@ const Navbar = () => {
                     </motion.button>
 
                     {/* Mobile Menu Button */}
-                    <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2 md:hidden">
+                    <div className="absolute right-6 top-1/2 -translate-y-1/2 flex items-center gap-1.5 md:hidden">
                         <motion.button
                             onClick={toggleTheme}
-                            className="p-2.5 rounded-full"
+                            className="p-2 rounded-full"
                             style={{
                                 background: 'linear-gradient(135deg, var(--primary-500)/20, var(--accent-500)/20)',
                                 border: '1px solid var(--primary-500)/30',
@@ -177,12 +177,12 @@ const Navbar = () => {
                             whileTap={{ scale: 0.9 }}
                             aria-label="Toggle theme"
                         >
-                            {theme === 'dark' ? <FiSun size={18} className="text-yellow-400" /> : <FiMoon size={18} className="text-[var(--primary-400)]" />}
+                            {theme === 'dark' ? <FiSun size={16} className="text-yellow-400" /> : <FiMoon size={16} className="text-[var(--primary-400)]" />}
                         </motion.button>
 
                         <motion.button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="p-2.5 rounded-full relative overflow-hidden"
+                            className="p-2 rounded-full relative overflow-hidden"
                             style={{
                                 background: 'linear-gradient(135deg, var(--primary-500), var(--accent-500))',
                             }}
@@ -197,7 +197,7 @@ const Navbar = () => {
                                     exit={{ rotate: 90, opacity: 0 }}
                                     transition={{ duration: 0.2 }}
                                 >
-                                    {isOpen ? <FiX size={20} className="text-white" /> : <FiMenu size={20} className="text-white" />}
+                                    {isOpen ? <FiX size={18} className="text-white" /> : <FiMenu size={18} className="text-white" />}
                                 </motion.div>
                             </AnimatePresence>
                         </motion.button>
